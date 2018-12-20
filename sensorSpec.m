@@ -1,10 +1,10 @@
-function sensorSpec(pixel,sensorSize,distObjImg,pxPtarget)
+function sensorSpec(pixel,sensorSize,distObjImg,res)
 % sensorSpec Retourne les caractéristiques clés d'un capteur donné
 % INPUT - sensorSpec = (pixel,sensorSize,distObjImg,pxPtarget)
 %           pixel (taille du pixel en micromètre)
 %           sesorSize (taille du senseur en mm)
 %           distObjImg (distance du détecteur en mètres)
-%           pxPtarget (nombre de pixels par target)
+%           res (resolution en LP/target)
 % 
 % OUTPUT - IFOV (en rad)
 %          FOV_rad (en rad)
@@ -15,7 +15,7 @@ function sensorSpec(pixel,sensorSize,distObjImg,pxPtarget)
 
 
 %Variables
-mPpx = 10/pxPtarget; %m/px
+mPpx = 10/(2*res); %m/px
 lambda = 0.5;%en um
 D = 90;%diamètre en mm
 %Core
